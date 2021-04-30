@@ -61,3 +61,8 @@
     position: relative;
     top: 12px;
 }
+
+.ant-table-tbody{
+    font-size: 12px;
+}
+

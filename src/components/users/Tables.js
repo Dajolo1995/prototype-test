@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col, Button, Table } from "antd";
-import { UserAddOutlined, TeamOutlined } from "@ant-design/icons";
+import { TeamOutlined } from "@ant-design/icons";
 import userJson from "../../db/users.json";
 
 import "./users.css";
@@ -37,29 +37,35 @@ const columns = [
     key: "telefono",
   },
   {
-    title: "correo electronico",
+    title: "Email ",
     dataIndex: "email",
     key: "email",
   },
   {
-    title: "edit",
+    title: "Acción",
     dataIndex: "edit",
     key: "edit",
-    render:(value, row, index) =>{
-      
-      return(<span>Lo</span>)
+    render: (value, row, index) => {
+      return (
+        <div className="button-table">
+          <Button>
+            <i class="bx bxs-pencil"></i>
+          </Button>
+          <Button>
+            <i class="bx bxs-trash"></i>
+          </Button>
+        </div>
+      );
     },
   },
 ];
-
-
 
 const Tables = () => {
   return (
     <div className="table-user">
       <div className="user">
-        <Row style={{ background: "#fff" }}>
-          <Col span={20}>
+        <Row style={{ background: "#fff", display: "contents" }}>
+          <Col span={21}>
             <span className="user-logo">
               <TeamOutlined
                 styled={{
@@ -72,20 +78,34 @@ const Tables = () => {
               <p>Usuario existentes</p>
             </span>
           </Col>
+
           <Col span={3}>
-            <Button
-              type="primary"
-              style={{ background: "#1D43AD", border: "#1D43AD" }}
-            >
-              Crear
-            </Button>
+            <div style={{ float: "right" }}>
+              <Button
+                type="primary"
+                style={{
+                  background: "#1D43AD",
+                  border: "#1D43AD",
+                  textAlign: "right",
+                  position: "relative",
+                  top: "11px",
+                  right: "10px",
+                }}
+              >
+                Crear
+              </Button>
+            </div>
           </Col>
         </Row>
       </div>
       <div>
         <Row style={{ background: "#fff" }}>
-          <Col span={23}>
-            <Table columns={columns} dataSource={userJson.users} />
+          <Col span={24}>
+            <Table
+              style={{ fontSize: "12px" }}
+              columns={columns}
+              dataSource={userJson.users}
+            />
           </Col>
         </Row>
       </div>

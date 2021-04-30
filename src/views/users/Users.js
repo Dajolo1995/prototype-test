@@ -6,8 +6,6 @@ import {
   PieChartOutlined,
   ContainerOutlined,
   PicRightOutlined,
-  MenuOutlined,
-  UserOutlined,
 } from "@ant-design/icons";
 import "./Users.css";
 
