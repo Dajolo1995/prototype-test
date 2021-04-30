@@ -16,20 +16,3 @@ html {
         min-height: 100vh;
     }
 }
-.nav{
-    display: flex;
-}
-
-.navbar-menu{
-    display: flex;
-}
-
-.button-menu{
-    color: blue;
-    padding: 20px;
-    margin-left: 10px;
-}
-
-.navbar-user{
-    display: flex;
-}

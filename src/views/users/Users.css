@@ -1,0 +1,57 @@
+.nav{
+    display: flex;
+}
+
+.navbar-menu{
+    display: flex;
+}
+
+.button-menu{
+    color: blue;
+
+}
+
+.navbar-user{
+    display: flex;
+}
+
+.name{
+    color: #1D43AD;
+}
+
+.btn-menu{
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    top: -21px;
+}
+
+.ant-btn .ant-btn-text{
+    padding: 20px;
+    color: rgb(29, 67, 173);
+    position: relative;
+    left: 12px;
+    top: 20px;
+}
+
+/* .usuario{
+    position: relative;
+    display: flex;
+    left: 630px;
+} */
+
+
+/* span .icon-user{
+    font-size: 35px;
+    position: relative;
+    top: 10px;
+    right: 11px;
+} */
+
+.icon-exit{
+    font-size:'30px'
+}
+
+/* .text-user{
+    font-size: 11px;
+} */

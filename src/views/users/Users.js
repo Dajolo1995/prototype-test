@@ -1,21 +1,18 @@
 import React, { useState } from "react";
-import Main from '../../components/users/Main'
+import Main from "../../components/users/Main";
 
-import { Layout, Menu, Breadcrumb, Button } from "antd";
+import { Layout, Menu, Button, Col } from "antd";
 import {
   PieChartOutlined,
   ContainerOutlined,
   PicRightOutlined,
   MenuOutlined,
   UserOutlined,
-  createFromIconfontCN,
 } from "@ant-design/icons";
+import "./Users.css";
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
-const IconFont = createFromIconfontCN({
-  scriptUrl: "//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js",
-});
 
 const Users = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -27,12 +24,7 @@ const Users = () => {
   return (
     <div>
       <Layout style={{ minHeight: "100vh" }}>
-        <Sider
-          collapsible
-          collapsed={collapsed}
-          onCollapse={onCollapse}
-          style={{ background: "#40A8ED" }}
-        >
+        <Sider collapsed={collapsed} style={{ background: "#40A8ED" }}>
           <div className="logo" />
           <Menu
             theme="dark"
@@ -74,31 +66,57 @@ const Users = () => {
             style={{ padding: 0, background: "#fff" }}
           >
             <div className="nav">
-              <div className="navbar navbar-menu">
-                <Button
-                  type="text"
-                  icon={<MenuOutlined />}
-                  style={{
-                    margin_left: "10px",
-                    padding: "20px",
-                    color: "blue",
-                  }}
-                ></Button>
-                <h2 className="name"> Prueba Front-end</h2>
-              </div>
+              <Col span={3}>
+                <div className="navbar navbar-menu">
+                  <Button
+                    onClick={() => onCollapse(!collapsed)}
+                    type="text"
+                    style={{
+                      margin_left: "10px",
+                      padding: "20px",
+                      color: "#1D43AD",
+                      position: "relative",
+                      top: "19px",
+                    }}
+                  >
+                    <i class="bx bx-menu btn-menu"></i>
+                  </Button>
+                  <h2 className="name"> Prueba Front-end</h2>
+                </div>
+              </Col>
+
+              <Col span={20}>
+                <div className="usuario" style={{ textAlign: "right" }}>
+                  <span>
+                    <i class="bx bxs-user-circle icon-user"></i>
+                  </span>
+                  <span className="text-user">Andres Felipe Garcia Castro</span>
+
+                  <Button
+                    type="text"
+                    style={{
+
+                    }}
+                  >
+                    <i
+                      class="bx bx-exit icon-exit"
+                      style={{ color: "#1d43ad" }}
+                    ></i>
+                  </Button>
+                </div>
+              </Col>
             </div>
           </Header>
           <Content style={{ margin: "0 16px" }}>
-
             <div
               className="site-layout-background"
               style={{ padding: 24, minHeight: 360 }}
             >
-              <Main/>
+              <Main />
             </div>
           </Content>
-          <Footer style={{ textAlign: "center" }}>
-            Ant Design ©2018 Created by Ant UED
+          <Footer style={{ textAlign: "right", background: "#fff" }}>
+            OLSoftware - 2018
           </Footer>
         </Layout>
       </Layout>

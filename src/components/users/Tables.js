@@ -1,8 +1,11 @@
 import React from "react";
-import { Row, Col, Button, Table, Modal } from "antd";
-import { UserAddOutlined } from "@ant-design/icons";
+import { Row, Col, Button, Table } from "antd";
+import { UserAddOutlined, TeamOutlined } from "@ant-design/icons";
+import userJson from "../../db/users.json";
 
-const columns  = [
+import "./users.css";
+
+const columns = [
   {
     title: "Nombre",
     dataIndex: "nombre",
@@ -29,7 +32,7 @@ const columns  = [
     key: "estado",
   },
   {
-    title: "telefono",
+    title: "Teléfono",
     dataIndex: "telefono",
     key: "telefono",
   },
@@ -39,30 +42,51 @@ const columns  = [
     key: "email",
   },
   {
-    title:"edit",
+    title: "edit",
     dataIndex: "edit",
     key: "edit",
-  }
+    render:(value, row, index) =>{
+      
+      return(<span>Lo</span>)
+    },
+  },
 ];
+
+
 
 const Tables = () => {
   return (
-    <div>
+    <div className="table-user">
       <div className="user">
-        <Row>
-          <Col span={21}>
-            <span icon={<UserAddOutlined />}>
-              <p>Hola</p>
+        <Row style={{ background: "#fff" }}>
+          <Col span={20}>
+            <span className="user-logo">
+              <TeamOutlined
+                styled={{
+                  top: "5px",
+                  position: "relative",
+                  marginright: "20px",
+                  left: "11px",
+                }}
+              />
+              <p>Usuario existentes</p>
             </span>
           </Col>
           <Col span={3}>
-            <Button type="primary">Crear</Button>
+            <Button
+              type="primary"
+              style={{ background: "#1D43AD", border: "#1D43AD" }}
+            >
+              Crear
+            </Button>
           </Col>
         </Row>
       </div>
       <div>
-        <Row>
-        <Table columns={columns}/>
+        <Row style={{ background: "#fff" }}>
+          <Col span={23}>
+            <Table columns={columns} dataSource={userJson.users} />
+          </Col>
         </Row>
       </div>
     </div>

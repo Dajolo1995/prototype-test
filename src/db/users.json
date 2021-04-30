@@ -1,0 +1,86 @@
+
+{
+ "users":[
+    {
+      "id": "1",
+      "nombre": "Andres Felipe",
+      "apellidos": "Garcia Castro",
+      "identificacion": "114485404",
+      "rol":"Administrado",
+      "estado": "Activo",
+      "telefono": "3165303978",
+      "email": "afgarcia@refinal.com",
+      "edit": "lll"
+    },
+    {
+      "id": 2,
+      "nombre": "Elizabeth",
+      "apellidos": "Arboleda",
+      "identificacion": "665789080",
+      "rol": "Administrador",
+      "estado": "Inactivo",
+      "telefono": "3165303978",
+      "email": "earboleda@refinal.com"
+    },
+    {
+      "id": 3,
+      "nombre": "Jader",
+      "apellidos": "Penagos",
+      "identificacion": "665789043",
+      "rol": "Conductor",
+      "estado": "Activo",
+      "telefono": "3175303978",
+      "email": "jpenagos@refinal.com"
+    },
+    {
+      "id": 4,
+      "nombre": "Diana",
+      "apellidos": "Villa",
+      "identificacion": "1122567890",
+      "rol": "Recolector",
+      "estado": "Activo",
+      "telefono": "3005303976",
+      "email": "dvilla@refinal.com"
+    },
+    {
+      "id": 5,
+      "nombre": "Luis AndrÃ©s",
+      "apellidos": "Murillo",
+      "identificacion": "1144198789",
+      "rol": "Administrador",
+      "estado": "Activo",
+      "telefono": "3115134078",
+      "email": "lamurillo@refinal.com"
+    },
+    {
+      "id": 6,
+      "nombre": "Jairo",
+      "apellidos": "Gutierrez",
+      "identificacion": "44789056",
+      "rol": "Coordinador",
+      "estado": "Activo",
+      "telefono": "3125333977",
+      "email": "jgutierrez@refinal.com"
+    },
+    {
+      "id": 7,
+      "nombre": "Alexandra",
+      "apellidos": "Culcha",
+      "identificacion": "114419876",
+      "rol": "Digitador CG-UNO",
+      "estado": "Inactivo",
+      "telefono": "3145439560",
+      "email": "aculcha@refinal.com"
+    },
+    {
+      "id": 8,
+      "nombre": "Valentina",
+      "apellidos": "Zapata",
+      "identificacion": "72567788",
+      "rol": "Recolector",
+      "estado": "Activo",
+      "telefono": "3157893970",
+      "email": "vazapata@refinal.com"
+    }
+  ]
+}
