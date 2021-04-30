@@ -1,9 +1,16 @@
 import React from "react";
 import { Row, Col } from "antd";
+import styled from "@emotion/styled";
 
 import CardLogin from "../../components/login/CardLogin";
 
 import "./Login.css";
+
+const TextDiv = styled.div`
+  position: absolute;
+  top: 360px;
+  left: 200px;
+`;
 
 const Login = () => {
   return (
@@ -11,12 +18,11 @@ const Login = () => {
       <div className="login-container">
         <Row>
           <Col span={12}>
-            <div>
-              <h2>Aplicación</h2>
-              <h2>OLSoftware</h2>
-
-              <p>Prueba práctica Front-end senior</p>
-            </div>
+            <TextDiv>
+              <h2 className="text-login">Aplicación</h2>
+              <h2 className="text-login">OLSoftware</h2>
+              <p className="login-text">Prueba práctica Front-end senior</p>
+            </TextDiv>
           </Col>
           <Col span={12}>
             <CardLogin />

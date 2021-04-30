@@ -1,14 +1,16 @@
 import React from "react";
 import { Input, Cascader, Button } from "antd";
 
-import './users.css'
-
+import "./users.css";
 
 const FormSearch = () => {
   return (
     <div>
       <div className="formSearch">
-        <h4 className="filtro-text"><i class='bx bx-user-plus user-icon-search'></i>Filtrar búsqueda</h4>
+        <h4 className="filtro-text">
+          <i class="bx bxs-user-plus" styled={{}}></i>
+          <spam className="filter-search">Filtrar búsqueda</spam>
+        </h4>
         <div className="formInput">
           <label>Nombre</label>
           <Input />

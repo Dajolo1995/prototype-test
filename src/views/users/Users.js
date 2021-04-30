@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Main from "../../components/users/Main";
-
+import styled from "@emotion/styled";
 import { Layout, Menu, Button, Col } from "antd";
 import {
   PieChartOutlined,
@@ -8,9 +8,24 @@ import {
   PicRightOutlined,
 } from "@ant-design/icons";
 import "./Users.css";
+import { Link } from "react-router-dom";
+import PulseLoader from "react-spinners/PulseLoader";
+import { css } from "@emotion/react";
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
+
+const ButtonExit = styled(Button)`
+  font-size: 24px;
+  position: relative;
+  top: 7px;
+`;
+
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
 
 const Users = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -18,6 +33,9 @@ const Users = () => {
     setCollapsed(collapseParams);
     console.log(collapseParams);
   };
+
+  const [loading, setLoading] = useState(true);
+  const [color, setColor] = useState("#ffffff");
 
   return (
     <div>
@@ -64,7 +82,7 @@ const Users = () => {
             style={{ padding: 0, background: "#fff" }}
           >
             <div className="nav">
-              <Col span={3}>
+              <Col span={7}>
                 <div className="navbar navbar-menu">
                   <Button
                     onClick={() => onCollapse(!collapsed)}
@@ -79,28 +97,24 @@ const Users = () => {
                   >
                     <i class="bx bx-menu btn-menu"></i>
                   </Button>
-                  <h2 className="name"> Prueba Front-end</h2>
+                  <h2 className="name">Pruebas Front-end</h2>
                 </div>
               </Col>
 
-              <Col span={20}>
+              <Col span={17}>
                 <div className="usuario" style={{ textAlign: "right" }}>
                   <span>
                     <i class="bx bxs-user-circle icon-user"></i>
                   </span>
                   <span className="text-user">Andres Felipe Garcia Castro</span>
-
-                  <Button
-                    type="text"
-                    style={{
-
-                    }}
-                  >
-                    <i
-                      class="bx bx-exit icon-exit"
-                      style={{ color: "#1d43ad" }}
-                    ></i>
-                  </Button>
+                  <Link to={"/"}>
+                    <ButtonExit type="text" style={{}}>
+                      <i
+                        class="bx bx-exit icon-exit"
+                        style={{ color: "#1d43ad", fontSize: "24px" }}
+                      ></i>
+                    </ButtonExit>
+                  </Link>
                 </div>
               </Col>
             </div>
@@ -118,6 +132,16 @@ const Users = () => {
           </Footer>
         </Layout>
       </Layout>
+
+      <div className="sweet-loading">
+        <button onClick={() => setLoading(!loading)}>Toggle Loader</button>
+        <input
+          value={color}
+          onChange={(input) => setColor(input.target.value)}
+          placeholder="Color of the loader"
+        />
+        <PulseLoader color={color} loading={loading} css={override} size={150} />
+      </div>
     </div>
   );
 };

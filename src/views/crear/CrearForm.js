@@ -1,6 +1,8 @@
 import React from "react";
 import "./CrearForm.css";
-import { Row, Col, Input } from "antd";
+import { Row, Col, Input, Button } from "antd";
+
+
 
 const CrearForm = () => {
   return (
@@ -9,7 +11,7 @@ const CrearForm = () => {
         <h3>Agregar nuevo usuario</h3>
         <form>
           <Row>
-            <Col>
+            <Col span={12}>
               <div className="direction">
                 <div className="input">
                   <label>Nombre</label>
@@ -29,7 +31,7 @@ const CrearForm = () => {
                 </div>
               </div>
             </Col>
-            <Col>
+            <Col span={12}>
               <div className="direction">
                 <div className="input">
                   <label>Apellidos</label>
@@ -50,6 +52,12 @@ const CrearForm = () => {
               </div>
             </Col>
           </Row>
+          <div className="button-filter">
+          <Button type="primary" danger>
+            Primary
+          </Button>
+          <Button danger>Default</Button>
+        </div>
         </form>
       </div>
     </div>

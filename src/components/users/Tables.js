@@ -1,7 +1,8 @@
-import React from "react";
-import { Row, Col, Button, Table } from "antd";
+import React, { useState } from "react";
+import { Row, Col, Button, Table, Modal } from "antd";
 import { TeamOutlined } from "@ant-design/icons";
 import userJson from "../../db/users.json";
+import CrearForm from "../../views/crear/CrearForm";
 
 import "./users.css";
 
@@ -48,10 +49,10 @@ const columns = [
     render: (value, row, index) => {
       return (
         <div className="button-table">
-          <Button>
+          <Button size="small" type="link">
             <i class="bx bxs-pencil"></i>
           </Button>
-          <Button>
+          <Button size="small" type="text">
             <i class="bx bxs-trash"></i>
           </Button>
         </div>
@@ -61,6 +62,20 @@ const columns = [
 ];
 
 const Tables = () => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
   return (
     <div className="table-user">
       <div className="user">
@@ -69,13 +84,13 @@ const Tables = () => {
             <span className="user-logo">
               <TeamOutlined
                 styled={{
-                  top: "5px",
+                  marginleft: "15px",
+                  marginright: "12px",
+                  top: "7px",
                   position: "relative",
-                  marginright: "20px",
-                  left: "11px",
                 }}
               />
-              <p>Usuario existentes</p>
+              <p className="existing-user">Usuario existentes</p>
             </span>
           </Col>
 
@@ -83,13 +98,14 @@ const Tables = () => {
             <div style={{ float: "right" }}>
               <Button
                 type="primary"
+                onClick={showModal}
                 style={{
                   background: "#1D43AD",
                   border: "#1D43AD",
                   textAlign: "right",
                   position: "relative",
                   top: "11px",
-                  right: "10px",
+                  right: "21px",
                 }}
               >
                 Crear
@@ -109,6 +125,15 @@ const Tables = () => {
           </Col>
         </Row>
       </div>
+
+      <Modal
+      footer={null}
+        visible={isModalVisible}
+        onOk={handleOk}
+        onCancel={handleCancel}
+      >
+        <CrearForm />
+      </Modal>
     </div>
   );
 };

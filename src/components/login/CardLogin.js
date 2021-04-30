@@ -1,7 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, Input, Button } from "antd";
 import styled from "@emotion/styled";
 import { UserOutlined } from "@ant-design/icons";
+import { useHistory } from "react-router-dom";
+import PulseLoader from "react-spinners/PulseLoader";
+import { css } from "@emotion/react";
+
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
 
 const TitleLogin = styled.h2`
   text-align: center;
@@ -26,55 +35,121 @@ const DivForm = styled.div`
   margin-bottom: 27px;
 `;
 
+const ButtonLogin = styled(Button)`
+  background: #1d43ad;
+  color: #fff;
+  :hover {
+    background: #1d43ad;
+    color: #ccc;
+  }
+`;
+
+const CarLogin = styled.div`
+  position: absolute;
+  top: 150px;
+  left: 260px;
+`;  
+
+const LoadingLogin = styled(PulseLoader)`
+  position: absolute;
+  right: 12px;
+`
+
 const CardLogin = () => {
+  let [loading, setLoading] = useState(false);
+  let [color, setColor] = useState("#ffffff");
+
+  const history = useHistory();
+
+  useEffect(() => {
+    let timeOut;
+    if(loading){
+      timeOut = setTimeout(()=> {
+        setLoading(false)
+        onSubmit()
+      },3000)
+    }
+
+    return () =>{
+      clearTimeout(timeOut)
+    }
+  }, [loading])
+
 
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
 
-  const handlerInput = e =>{
-      let name= e.target.name;
-      let value = e.target.value
+  const { email, password } = form;
 
-      setForm({
-          ...form,
-          [name]:value
-      })
-  }
+  const onChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const onSubmit = (e) => {
+    // e.preventDefault();
+    history.push('/users')
+
+    if (email.trim() === "" || password.trim() === "") {
+      console.log("favor llenar todos los campos");
+    }
+  };
 
   return (
-    <div>
+    <CarLogin>
       <LoginCard style={{}}>
         <div>
           <TitleLogin>Inicio de sesión</TitleLogin>
         </div>
-
-        <DivForm>
-          <form>
+        <form>
+          <DivForm>
             <Input
-            type="text"
+              required
+              type="text"
               prefix={<UserOutlined />}
               styled={{
                 box_shadow: "4px 1px 1px rgb(229 229 229 / 40%)",
               }}
               name="email"
-              onChange={event => handlerInput(event)}
+              value={email}
+              onChange={onChange}
             />
-            <Input.Password
+            <Input
               styled={{
                 box_shadow: "4px 4px 1px rgb(229 229 229 / 40%)",
               }}
+              required
               name="password"
-              onChange={event => handlerInput(event)}
+              type="password"
+              onChange={onChange}
+              value={password}
             />
-          </form>
-        </DivForm>
-        <Button type="primary" block>
-          Iniciar sesión
-        </Button>
+          </DivForm>
+
+          <ButtonLogin  onClick={() => setLoading(true)} block>
+            <> 
+              Iniciar sesión
+            </>
+          </ButtonLogin>
+        </form>
       </LoginCard>
-    </div>
+      <div className="sweet-loading">
+        <button >Toggle Loader</button>
+        <input
+          value={color}
+          onChange={(input) => setColor(input.target.value)}
+          placeholder="Color of the loader"
+        />
+        {
+          loading==true?(<LoadingLogin color='#000' loading={loading} css={override} size={120} />) :null
+          }
+        
+      </div>
+    </CarLogin>
   );
 };
 

@@ -10,7 +10,7 @@
       "estado": "Activo",
       "telefono": "3165303978",
       "email": "afgarcia@refinal.com",
-      "edit": "lll"
+      "password": "123456"
     },
     {
       "id": 2,
@@ -20,7 +20,8 @@
       "rol": "Administrador",
       "estado": "Inactivo",
       "telefono": "3165303978",
-      "email": "earboleda@refinal.com"
+      "email": "earboleda@refinal.com",
+      "password": "123456"
     },
     {
       "id": 3,
@@ -30,7 +31,8 @@
       "rol": "Conductor",
       "estado": "Activo",
       "telefono": "3175303978",
-      "email": "jpenagos@refinal.com"
+      "email": "jpenagos@refinal.com",
+      "password": "123456"
     },
     {
       "id": 4,
@@ -40,7 +42,8 @@
       "rol": "Recolector",
       "estado": "Activo",
       "telefono": "3005303976",
-      "email": "dvilla@refinal.com"
+      "email": "dvilla@refinal.com",
+      "password": "123456"
     },
     {
       "id": 5,
@@ -50,7 +53,8 @@
       "rol": "Administrador",
       "estado": "Activo",
       "telefono": "3115134078",
-      "email": "lamurillo@refinal.com"
+      "email": "lamurillo@refinal.com",
+      "password": "123456"
     },
     {
       "id": 6,
@@ -60,7 +64,8 @@
       "rol": "Coordinador",
       "estado": "Activo",
       "telefono": "3125333977",
-      "email": "jgutierrez@refinal.com"
+      "email": "jgutierrez@refinal.com",
+      "password": "123456"
     },
     {
       "id": 7,
@@ -70,7 +75,8 @@
       "rol": "Digitador CG-UNO",
       "estado": "Inactivo",
       "telefono": "3145439560",
-      "email": "aculcha@refinal.com"
+      "email": "aculcha@refinal.com",
+      "password": "123456"
     },
     {
       "id": 8,
@@ -80,7 +86,8 @@
       "rol": "Recolector",
       "estado": "Activo",
       "telefono": "3157893970",
-      "email": "vazapata@refinal.com"
+      "email": "vazapata@refinal.com",
+      "password": "123456"
     }
   ]
 }

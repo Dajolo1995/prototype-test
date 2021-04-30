@@ -1,37 +1,37 @@
-.nav{
-    display: flex;
+.nav {
+  display: flex;
 }
 
-.navbar-menu{
-    display: flex;
+.navbar-menu {
+  display: flex;
 }
 
-.button-menu{
-    color: blue;
-
+.button-menu {
+  color: blue;
 }
 
-.navbar-user{
-    display: flex;
+.navbar-user {
+  display: flex;
 }
 
-.name{
-    color: #1D43AD;
+.name {
+  color: #1d43ad;
+  font-size: 24px;
 }
 
-.btn-menu{
-    font-size: 30px;
-    text-align: center;
-    position: relative;
-    top: -21px;
+.btn-menu {
+  font-size: 30px;
+  text-align: center;
+  position: relative;
+  top: -21px;
 }
 
-.ant-btn .ant-btn-text{
-    padding: 20px;
-    color: rgb(29, 67, 173);
-    position: relative;
-    left: 12px;
-    top: 20px;
+.ant-btn .ant-btn-text {
+  padding: 20px;
+  color: rgb(29, 67, 173);
+  position: relative;
+  left: 12px;
+  top: 20px;
 }
 
 /* .usuario{
@@ -40,7 +40,6 @@
     left: 630px;
 } */
 
-
 /* span .icon-user{
     font-size: 35px;
     position: relative;
@@ -48,10 +47,17 @@
     right: 11px;
 } */
 
-.icon-exit{
-    font-size:'30px'
+.icon-exit {
+  font-size: "30px";
 }
 
 /* .text-user{
     font-size: 11px;
 } */
+
+.icon-user {
+  font-size: 35px;
+  top: 11px;
+  right: 10px;
+  position: relative;
+}

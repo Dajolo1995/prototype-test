@@ -1,68 +1,97 @@
-.user{
-    display: flex;
-    background-color: aquamarine;
+.user {
+  display: flex;
+  background-color: aquamarine;
 }
 
-.formSearch{
-    margin-left: 15px;
-    background: #fff;
-    max-width: 270px;
-    width: 230px;
-    height: 660px;
+.formSearch {
+  margin-left: 15px;
+  background: #fff;
+  max-width: 270px;
+  width: 230px;
+  height: 660px;
 }
 
-.user{
-    background: #fff;
+.user {
+  background: #fff;
 }
 
-.formInput{
-    max-width: 80%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-    left: 20px;
+.formInput {
+  max-width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  left: 20px;
+  margin-bottom: 10px;
 }
 
+.formInput label{
+  color: #ccc;
+}
+ 
 .ant-btn-dangerous.ant-btn-primary {
-    background: #69A026 !important;
-    border-color: #69A026 !important;
-    color: white !important;
+  background: #69a026 !important;
+  border-color: #69a026 !important;
+  color: white !important;
 }
 
-.button-filter{
-    margin: 10px;
-    display: flex;
-    justify-content: center;
+.button-filter {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
 }
 
-.ant-btn-dangerous{
-    border-color: #69A026 !important;
-    color: #69A026 !important;
-    margin-left: 5px;
+.ant-btn-dangerous {
+  border-color: #69a026 !important;
+  color: #69a026 !important;
+  margin-left: 5px;
 }
 
-.user{
-    background: #fff;
+.user {
+  background: #fff;
 }
 
-.filtro-text{
-    color: #1D43AD;
-    font-size: 20px;
-    display: flex;
+.filtro-text {
+  color: #1d43ad;
+  display: flex;
+}
+
+.user-logo {
+  color: #1d43ad;
+  display: flex;
+  text-align: center;
+  font-size: 20px;
+  position: relative;
+  top: 17px;
+  margin-left: 23px;
+}
+
+.ant-table-tbody {
+  font-size: 12px;
+}
+
+.existing-user {
+  margin-left: 12px;
+  position: relative;
+  top: -5px;
+}
+
+.bxs-user-plus{
+    font-size: 32px;
+    margin-left: 19px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.filter-search{
+    font-size: 18px;
+margin-top: 10px;
+}
+
+.button-table{
+  display: flex;
 }
 
 
-.user-logo{
-    color: #1D43AD;
-    display: flex;
-    text-align:center;
-    font-size: 20px;
-    position: relative;
-    top: 12px;
-}
-
-.ant-table-tbody{
-    font-size: 12px;
-}
 
